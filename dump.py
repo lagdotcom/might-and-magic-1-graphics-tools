@@ -155,10 +155,8 @@ def dumpItems(ofn='items.txt'):
             eff = ITEMEFFECTS[efftype]
             if '%' in eff:
                 eff = eff % effbonus
-        if wear == 0:
-            wear = 255
         name = ztrim(name)
-        canwear = ''.join(flags(wear, WEARFLAGS, ' '))
+        canwear = ''.join(flags(255 - wear, WEARFLAGS, ' '))
         ofi.write('%-14s %-8s %s %02x %02x %02x %5d %2d %2d\n' %
                   (name, canwear, eff, d, e, f, cost, dmg, bonus))
     print('Wrote:', ofn)

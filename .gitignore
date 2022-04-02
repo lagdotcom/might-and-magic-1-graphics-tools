@@ -3,3 +3,4 @@
 *.txt
 screen*
 redump/
+__pycache__/
